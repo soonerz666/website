@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import the font if you haven't already */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;1,500&display=swap');
+
+/* Body Styling */
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Project Grid Styling */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Project Card Styling */
+.project-card {
+  background-color: #cccccc; /* Default color */
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect to Scale (For Desktop) */
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay for Projects (Hidden by Default on Desktop) */
+.project-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay on hover (Desktop) */
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Unique Hover Colors for Each Project */
+.project-card:nth-child(1) {
+  background-color: #ff6347; /* Tomato */
+}
+
+.project-card:nth-child(2) {
+  background-color: #ff4500; /* Orange Red */
+}
+
+.project-card:nth-child(3) {
+  background-color: #9370db; /* Medium Purple */
+}
+
+.project-card:nth-child(4) {
+  background-color: #ff8c00; /* Dark Orange */
+}
+
+.project-card:nth-child(5) {
+  background-color: #3cb371; /* Medium Sea Green */
+}
+
+.project-card:nth-child(6) {
+  background-color: #1e90ff; /* Dodger Blue */
+}
+
+/* Overlay Text */
+.project-card h3 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* For Mobile: Show the text overlay by default */
+@media screen and (max-width: 768px) {
+  .project-card .overlay {
+    opacity: 1;
+  }
+}
+
+  /* Adjust font size for smaller screens */
+  .project-card h3 {
+    font-size: clamp(1rem, 5vw, 1.8rem); /* Scale font for mobile */
+  }
+
+/* For Extra Small Devices */
+@media screen and (max-width: 480px) {
+  .project-card h3 {
+    font-size: clamp(1rem, 6vw, 1.6rem); /* Further reduce font size for small screens */
+  }
+}
+
+/* When screen width is above 1100px, make the project cards adjust in size */
+@media screen and (min-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Make cards larger */
+    gap: 20px;
+  }
+}
+
+header {
+  text-align: left; /* Align text within the header */
+  width: 100%; /* Ensure it takes full width */
+}
+

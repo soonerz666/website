@@ -1,0 +1,198 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family:'Be Vietnam Pro', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.be-vietnam-pro-regular {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.be-vietnam-pro-bold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.be-vietnam-pro-light-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.be-vietnam-pro-medium-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.navigation-bar {
+  padding: 10px 20px; /* Keep some padding */
+  text-align: right; /* Align content (the link) to the right */
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px; /* Keep some bottom margin */
+  background-color: transparent; /* Remove background color */
+}
+
+.home-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color of the parent */
+  font-weight: normal; /* Remove bold weight if you had it */
+  /* Use viewport width (vw) units for scaling font size */
+  font-size: 4vw; /* Adjust this value to control the scaling */
+}
+
+.home-link:hover {
+  color: #1900ff;
+}
+
+header {
+  text-align: left; /* Keep the text aligned to the left */
+  margin-top: 40px;
+  width: 100%; /* Make it take the full width */
+  box-sizing: border-box; /* Include padding in the width calculation if you add it */
+  padding: 0 20px; /* Add horizontal padding for readability */
+}
+
+header h1 {
+  font-size: 8vw; /* Scaling for mobile (large) */
+  color: #000;
+  margin: 0; /* Remove default heading margins */
+  line-height: 1; /* Adjust line height as needed */
+}
+
+/* Reduce header font size for larger screens */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 6vw; /* Much larger fixed size for desktop (using vw for comparison) */
+  }
+}
+
+/* Event Description Section */
+.event-description {
+  width: 100%; /* Make it take the full width */
+  max-width: none; /* Remove any maximum width restriction */
+  margin-top: 40px;
+  padding: 0 20px; /* Add some horizontal padding for readability */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.event-description p {
+  color: #333;
+  text-align: left;
+  /* Use viewport width (vw) units for scaling font size */
+  font-size: 5vw; /* Adjust this value to control the scaling */
+  margin: 0; /* Remove default paragraph margins */
+  line-height: 1.4; /* Adjust line height for better readability with large text */
+}
+
+/* Reduce paragraph font size for larger screens */
+@media (min-width: 768px) {
+  .event-description p {
+    font-size: 3vw; /* Much larger fixed size for desktop (using vw for comparison) */
+  }
+}
+
+.event-photo {
+  display: flex;
+  justify-content: center; /* Center the <figure> element horizontally */
+  margin-top: 40px;
+  width: 100%;
+}
+
+.event-photo figure {
+  margin: 0; /* Remove default figure margins */
+  display: flex; /* Make figure a flex container */
+  flex-direction: column; /* Stack image and caption vertically */
+  align-items: center; /* Center items (image and caption) horizontally within the figure */
+  width: 80%; /* Control the width of the figure and its contents */
+  max-width: 1200px; /* Optional: set a maximum width */
+}
+
+.event-photo img {
+  display: block;
+  width: 100%; /* Make image fill the width of the figure */
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 5px; /* Add some space between image and caption */
+}
+
+.event-photo figcaption {
+  font-size: 2vw; /* Adjust this value to control the scaling */
+  color: #777;
+  text-align: center; /* Keep the caption centered */
+  margin-top: 5px; /* Keep some space above the caption */
+}
+
+/* Reduce figcaption font size for larger screens */
+@media (min-width: 768px) {
+  .event-photo figcaption {
+    font-size: 1.8vw; /* Much larger fixed size for desktop (using vw for comparison) */
+  }
+}
+
+.side-by-side-photos {
+  display: flex;
+  flex-direction: column; /* Default to vertical on mobile */
+  margin-top: 10px;
+  width: 100%;
+}
+
+.side-by-side-photos .event-photo {
+  width: 100%; /* Default width for mobile */
+  margin-right: 0; /* No right margin on mobile */
+  margin-bottom: 20px; /* Add some vertical space between stacked images */
+}
+
+@media (min-width: 768px) {
+  .side-by-side-photos {
+    flex-direction: row; /* Horizontal on desktop */
+    align-items: flex-start;
+  }
+
+  .side-by-side-photos .event-photo {
+    width: calc(50% - 5px); /* Slightly wider, with even smaller margin */
+    margin-right: 10px; /* Even smaller right margin */
+    margin-bottom: 0; /* No bottom margin when side-by-side */
+  }
+
+  .side-by-side-photos .event-photo:last-child {
+    margin-right: 0; /* Remove right margin from the last item */
+  }
+}
+
+/* Reduce navigation link font size for larger screens */
+@media (min-width: 768px) {
+  .navigation-bar .home-link {
+    font-size: 3vw; /* Much larger fixed size for desktop (using vw for comparison) */
+  }
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+}
