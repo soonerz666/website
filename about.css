@@ -1,0 +1,32 @@
+/* Styles specific to the About Me page */
+
+/* Adjust the margin above the image section if needed to create more vertical space */
+.event-photo {
+    margin-top: 30px; /* Example: Slightly less margin than 40px in project.css */
+  }
+  
+  /* Target the image inside the figure */
+  .event-photo figure img {
+    /* Set a maximum height relative to the viewport height */
+    /* Adjust the percentage (vh) to find a value that fits well */
+    max-height: 75vh; /* This allows the image to be up to 75% of the screen's height */
+  
+    /* Ensure the image scales without distortion when max-height is applied */
+    /* 'contain' scales it down to fit entirely within the max-height/width constraints */
+    object-fit: contain;
+  
+    /* Keep width: 100% from project.css so it fills its figure width */
+    /* Keep height: auto; - max-height and object-fit will take over when needed */
+  }
+  
+  /* Optional: Adjust the figure width if you want the image container to be different on the About page */
+  /* .event-photo figure {
+      width: 90%; /* Example: Make figure a bit wider than 80% from project.css */
+      /* max-width: 900px; /* Example: Adjust max width */
+  /* } */
+  
+  /* Optional: Add some padding below the body content on the About page */
+  /* if the image/content sometimes goes right to the footer */
+  /* body {
+      padding-bottom: 40px;
+  } */

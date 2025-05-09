@@ -1,130 +1,321 @@
-/* General Reset */
+/* General Reset - Keep from project.css */
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling - Adapted from project.css */
+  body {
+    font-family:'Be Vietnam Pro', sans-serif;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    margin: 0;
+    padding: 20px; /* Padding around the whole content */
+    align-items: center; /* Center flex items (nav, header, footer) horizontally */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    justify-content: space-between; /* Pushes header/main content towards the top, footer towards the bottom */
+  }
+  
+  
+  /* Navigation Bar Styling */
+  .main-navigation {
+    width: 100%; /* Takes full width */
+    text-align: center; /* Centers the group of links */
+    padding: 10px 0; /* Vertical padding */
+    margin-bottom: 60px; /* Space below the nav before the main title */
+    box-sizing: border-box;
+  }
+  
+  .nav-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit body color */
+    margin: 0 15px; /* Space out the links horizontally */
+    font-weight: normal;
+    /* Responsive font size using vw */
+    font-size: 3.5vw; /* Adjust for desired size on smaller screens */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .nav-link:hover {
+    color: #1900ff; /* Hover color from project template */
+  }
+  
+  /* Adjust nav link font size for larger screens */
+  @media (min-width: 768px) {
+    .main-navigation .nav-link {
+      font-size: 2vw; /* Smaller relative size on tablets/desktops */
+    }
+  }
+  @media (min-width: 1200px) {
+      .main-navigation .nav-link {
+        font-size: 28px; /* Optional: Set a max font size on very large screens */
+      }
+  }
+  
+  
+  /* Homepage Header Styling */
+  .homepage-header {
+    text-align: center; /* Center the name and subtitle */
+    margin-top: 60px; /* Space below nav (already handled by nav's margin-bottom, but adds robustness) */
+    margin-bottom: auto; /* Pushes this block towards the top when body is taller than content */
+    padding: 0 20px; /* Add some padding */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .homepage-header h1 {
+    font-size: 12vw; /* Very large size for the main name */
+    color: #000;
+    margin: 0 0 15px 0; /* Space below the name */
+    line-height: 1; /* Tight line height */
+    word-wrap: break-word; /* Prevent name from overflowing on small screens */
+  }
+  
+  .homepage-header .subtitle {
+     font-size: 4.5vw; /* Smaller size for the descriptors */
+     color: #333; /* Slightly lighter color */
+     margin: 0;
+     line-height: 1.3;
+     word-wrap: break-word;
+  }
+  
+  /* Adjust header font sizes for larger screens */
+  @media (min-width: 768px) {
+    .homepage-header h1 {
+      font-size: 8vw; /* Smaller relative size on tablets/desktops */
+    }
+     .homepage-header .subtitle {
+       font-size: 2.8vw; /* Smaller relative size */
+     }
+  }
+  @media (min-width: 1200px) {
+      .homepage-header h1 {
+        font-size: 90px; /* Optional: Set a max font size */
+      }
+       .homepage-header .subtitle {
+        font-size: 34px; /* Optional: Set a max font size */
+       }
+  }
+  
+  
+  /* Footer Styling */
+  footer {
+    margin-top: 80px; /* More space above footer */
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  footer p {
+    font-size: 1rem; /* Slightly smaller font size */
+    color: #555; /* Lighter grey */
+  }
+
+  /* Adding Options *>/
+
+  /* Option 2: Small Gallery Styling */
+.homepage-gallery {
+  margin-top: 60px; /* Space above the gallery section */
+  margin-bottom: 60px; /* Space below the gallery section */
+  padding: 0 20px; /* Add horizontal padding */
+  width: 100%;
   box-sizing: border-box;
+  text-align: center; /* Center the optional section title */
 }
 
-/* Import the font if you haven't already */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;1,500&display=swap');
+.homepage-gallery h2 { /* Style for the optional section title */
+   font-size: 6vw;
+   margin-bottom: 40px;
+   color: #000;
+}
+ @media (min-width: 768px) {
+    .homepage-gallery h2 {
+       font-size: 4vw;
+    }
+ }
+  @media (min-width: 1200px) {
+     .homepage-gallery h2 {
+        font-size: 48px; /* Optional: fixed max size */
+     }
+  }
 
-/* Body Styling */
-body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  background-color: #ffffff; /* White background */
-  color: #000000; /* Black text */
-  line-height: 1.6;
+.gallery-side-by-side {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-/* Project Grid Styling */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
+  flex-direction: column; /* Stack items vertically on mobile */
+  align-items: center; /* Center items when stacked */
+  gap: 30px; /* Space between items */
   width: 100%;
 }
 
-/* Project Card Styling */
-.project-card {
-  background-color: #cccccc; /* Default color */
-  height: 300px;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+@media (min-width: 768px) {
+  .gallery-side-by-side {
+    flex-direction: row; /* Arrange items horizontally on desktop */
+    justify-content: center; /* Center the row of items */
+    flex-wrap: wrap; /* Allow items to wrap if too many */
+    gap: 20px; /* Adjust gap for horizontal layout */
+  }
 }
 
-/* Hover Effect to Scale (For Desktop) */
-.project-card:hover {
-  transform: scale(1.05);
-}
 
-/* Overlay for Projects (Hidden by Default on Desktop) */
-.project-card .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
+.gallery-item { /* Styling for each individual image/figure */
+  margin: 0; /* Remove default figure margin */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transition: opacity 0.3s ease;
+  width: 90%; /* Default width for mobile items */
+  max-width: 500px; /* Max width for individual item */
 }
 
-/* Show overlay on hover (Desktop) */
-.project-card:hover .overlay {
-  opacity: 1;
+@media (min-width: 768px) {
+   .gallery-item {
+      width: calc(50% - 20px); /* Adjust width for side-by-side with gap */
+      max-width: none; /* Remove max-width when side-by-side to allow flexibility */
+   }
+    /* If adding more than 2, you might need more complex width logic or use grid */
+    /* e.g., width: calc(33.3% - 20px) for three in a row */
 }
 
-/* Unique Hover Colors for Each Project */
-.project-card:nth-child(1) {
-  background-color: #ff6347; /* Tomato */
+
+.gallery-item img {
+  display: block;
+  width: 100%; /* Image fills its container (.gallery-item) */
+  height: auto;
+  margin-bottom: 8px; /* Space below image */
 }
 
-.project-card:nth-child(2) {
-  background-color: #ff4500; /* Orange Red */
-}
-
-.project-card:nth-child(3) {
-  background-color: #9370db; /* Medium Purple */
-}
-
-.project-card:nth-child(4) {
-  background-color: #ff8c00; /* Dark Orange */
-}
-
-.project-card:nth-child(5) {
-  background-color: #3cb371; /* Medium Sea Green */
-}
-
-.project-card:nth-child(6) {
-  background-color: #1e90ff; /* Dodger Blue */
-}
-
-/* Overlay Text */
-.project-card h3 {
-  color: #ffffff;
-  font-size: 2.2rem;
-  text-transform: uppercase;
+.gallery-item figcaption {
+  font-size: 2vw; /* Responsive font size */
+  color: #777;
   text-align: center;
 }
 
-/* For Mobile: Show the text overlay by default */
-@media screen and (max-width: 768px) {
-  .project-card .overlay {
-    opacity: 1;
+ @media (min-width: 768px) {
+    .gallery-item figcaption {
+       font-size: 1.6vw;
+    }
+ }
+  @media (min-width: 1200px) {
+     .gallery-item figcaption {
+        font-size: 20px; /* Optional: fixed max size */
+     }
   }
+/* End Option 2 Styling */
+
+/* --- Modern Minimal Projects Grid Styling (Revised - No Shadow) --- */
+
+.projects-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto auto auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-  /* Adjust font size for smaller screens */
-  .project-card h3 {
-    font-size: clamp(1rem, 5vw, 1.8rem); /* Scale font for mobile */
-  }
-
-/* For Extra Small Devices */
-@media screen and (max-width: 480px) {
-  .project-card h3 {
-    font-size: clamp(1rem, 6vw, 1.6rem); /* Further reduce font size for small screens */
-  }
-}
-
-/* When screen width is above 1100px, make the project cards adjust in size */
-@media screen and (min-width: 1100px) {
-  .project-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Make cards larger */
+.projects-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
-  }
 }
 
-header {
-  text-align: left; /* Align text within the header */
-  width: 100%; /* Ensure it takes full width */
+@media (min-width: 600px) {
+    .projects-grid ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 }
+
+@media (min-width: 800px) {
+    .projects-grid ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+     .projects-grid ul {
+         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+         gap: 30px;
+     }
+ }
+
+.projects-grid li {}
+
+.projects-grid .project-grid-item {
+    display: block;
+    text-decoration: none;
+    color: #fff; /* Set text color for the title */
+    position: relative; /* Needed to position the h2 */
+    overflow: hidden;
+    border-radius: 5px;
+    line-height: 0; /* Helps with image spacing */
+    background-color: #eee; /* Fallback background */
+}
+
+.projects-grid .project-grid-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* Optional: subtle image zoom on hover */
+}
+
+/* Style the H2 to overlay the image */
+.projects-grid .project-grid-item h2 {
+    position: absolute;
+    top: 50%; /* Position the top edge at the vertical center */
+    left: 50%; /* Position the left edge at the horizontal center */
+    transform: translate(-50%, -50%); /* Shift the element back by half its width and height to truly center it */
+    text-align: center;
+    width: 90%; /* Give the h2 a width (adjust as needed) */
+    max-width: calc(100% - 20px); /* Max width to prevent overflowing */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color: #fff; /* White text color */
+    font-size: 5vw; /* Responsive font size */
+    line-height: 1.2;
+    word-break: break-word;
+    /* Removed text-shadow */
+    /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); */
+    z-index: 1; /* Ensure text is above the image */
+    pointer-events: none; /* Allow clicks to pass through text to the link below */
+}
+
+/* Optional: Subtle hover effect on the grid item */
+.projects-grid .project-grid-item:hover img {
+    transform: scale(1.03); /* Slightly zoom image on hover */
+}
+
+.projects-grid .project-grid-item:hover {
+    /* No box-shadow */
+}
+
+
+/* Adjust H2 font size for different screen sizes */
+@media (min-width: 600px) {
+    .projects-grid .project-grid-item h2 {
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width: 800px) {
+    .projects-grid .project-grid-item h2 {
+        font-size: 2.2vw;
+    }
+}
+
+@media (min-width: 1200px) {
+     .projects-grid .project-grid-item h2 {
+         font-size: 26px; /* Optional: fixed max size */
+     }
+ }
+
+/* Keep other global styles (body, main-navigation, homepage-header, footer) */
+/* from your main style.css file */
 
