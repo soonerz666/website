@@ -26,7 +26,7 @@
     width: 100%; /* Takes full width */
     text-align: center; /* Centers the group of links */
     padding: 10px 0; /* Vertical padding */
-    margin-bottom: 60px; /* Space below the nav before the main title */
+    margin-bottom: 0px; /* Space below the nav before the main title */
     box-sizing: border-box;
   }
   
@@ -319,3 +319,81 @@
 /* Keep other global styles (body, main-navigation, homepage-header, footer) */
 /* from your main style.css file */
 
+/* ... your existing CSS ... */
+
+/* Hero Image Styling */
+.hero-image {
+  width: 100%;
+  height: calc(100vh - 90px - 20px); /* Subtract nav height AND bottom margin */
+  overflow: hidden;
+  position: relative;
+  margin-left: -20px; /* Counteract body's left padding */
+  margin-right: -20px; /* Counteract body's right padding */
+  margin-bottom: 20px; /* Add the desired bottom margin */
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Adjust spacing for larger screens - you might not need to adjust height here */
+/* Adjust object-position for smaller screens (e.g., max-width: 767px for typical mobile) */
+@media (max-width: 767px) {
+  .hero-image img {
+    object-position: right; /* Focus on the right side */
+  }
+}
+
+.homepage-header {
+  position: absolute; /* Take it out of the normal flow */
+  top: 50%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the element's own size */
+  text-align: center; /* Center the text within the header */
+  color: white; /* Ensure the default text color is white */
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Optional: set a maximum width */
+  padding: 20px; /* Optional: add some padding around the text */
+  /* Optional: Add a background color with some transparency if needed later */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  /* border-radius: 5px; */
+}
+
+.homepage-header h1 {
+  font-size: 12vw; /* Increased font size for the main heading */
+  color: white; /* Ensure the heading text is white */
+  margin-bottom: 10px;
+  line-height: 1.1;
+  word-wrap: break-word;
+  text-shadow: none; /* Remove text shadow */
+}
+
+.homepage-header .subtitle {
+  font-size: 4vw; /* Increased font size for the subtitle */
+  color: white; /* Ensure the subtitle text is white */
+  margin: 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  text-shadow: none; /* Remove text shadow */
+}
+
+/* Adjust header font sizes for larger screens */
+@media (min-width: 768px) {
+  .homepage-header h1 {
+    font-size: 9vw; /* Slightly adjust for larger screens */
+  }
+   .homepage-header .subtitle {
+     font-size: 3vw; /* Slightly adjust for larger screens */
+   }
+}
+@media (min-width: 1200px) {
+    .homepage-header h1 {
+      font-size: 90px; /* Optional: fixed max size */
+    }
+     .homepage-header .subtitle {
+      font-size: 36px; /* Optional: fixed max size */
+     }
+}
