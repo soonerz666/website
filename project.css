@@ -14,10 +14,11 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 20px;
-  align-items: flex-start;
+  padding: 20px; /* Padding around the main content area */
+  align-items: flex-start; /* Aligns flex items (sections, footer) to the start */
 }
 
+/* Font utility classes (kept for consistency) */
 .be-vietnam-pro-regular {
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
@@ -42,146 +43,184 @@ body {
   font-style: italic;
 }
 
+/* Navigation Bar Styling (Specific to project pages - Home link) */
 .navigation-bar {
-  padding: 10px 20px; /* Keep some padding */
-  text-align: right; /* Align content (the link) to the right */
+  padding: 10px 20px;
+  text-align: right;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 10px; /* Keep some bottom margin */
-  background-color: transparent; /* Remove background color */
+  margin-bottom: 10px;
+  background-color: transparent;
 }
 
 .home-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Use the default text color of the parent */
-  font-weight: normal; /* Remove bold weight if you had it */
-  /* Use viewport width (vw) units for scaling font size */
-  font-size: 4vw; /* Adjust this value to control the scaling */
+  text-decoration: none;
+  color: inherit;
+  font-weight: normal;
+  font-size: 4vw; /* Responsive font size */
 }
 
 .home-link:hover {
-  color: #1900ff;
+  color: #1900ff; /* Hover color */
 }
 
+/* Header Styling (Specific to project pages - Project Title) */
+/* Inherits from general header tag styles below, but adding class for clarity */
+.project-title-header {
+   /* No specific styles needed here if header tag styles are sufficient */
+}
+
+/* General Header tag styling */
 header {
-  text-align: left; /* Keep the text aligned to the left */
+  text-align: left;
   margin-top: 40px;
-  width: 100%; /* Make it take the full width */
-  box-sizing: border-box; /* Include padding in the width calculation if you add it */
-  padding: 0 20px; /* Add horizontal padding for readability */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 header h1 {
-  font-size: 8vw; /* Scaling for mobile (large) */
+  font-size: 8vw; /* Responsive font size */
   color: #000;
-  margin: 0; /* Remove default heading margins */
-  line-height: 1; /* Adjust line height as needed */
+  margin: 0;
+  line-height: 1;
 }
 
 /* Reduce header font size for larger screens */
 @media (min-width: 768px) {
   header h1 {
-    font-size: 6vw; /* Much larger fixed size for desktop (using vw for comparison) */
+    font-size: 6vw; /* Adjust as needed for larger screens */
   }
 }
 
 /* Event Description Section */
 .event-description {
-  width: 100%; /* Make it take the full width */
-  max-width: none; /* Remove any maximum width restriction */
+  width: 100%;
+  max-width: none;
   margin-top: 40px;
-  padding: 0 20px; /* Add some horizontal padding for readability */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .event-description p {
   color: #333;
   text-align: left;
-  /* Use viewport width (vw) units for scaling font size */
-  font-size: 5vw; /* Adjust this value to control the scaling */
-  margin: 0; /* Remove default paragraph margins */
-  line-height: 1.4; /* Adjust line height for better readability with large text */
+  font-size: 5vw; /* Responsive font size */
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* Reduce paragraph font size for larger screens */
 @media (min-width: 768px) {
   .event-description p {
-    font-size: 3vw; /* Much larger fixed size for desktop (using vw for comparison) */
+    font-size: 3vw; /* Adjust as needed for larger screens */
   }
 }
 
+/* Event Photo Section (Single Photos) */
 .event-photo {
   display: flex;
-  justify-content: center; /* Center the <figure> element horizontally */
+  justify-content: center; /* Center the <figure> element */
   margin-top: 40px;
   width: 100%;
 }
 
 .event-photo figure {
-  margin: 0; /* Remove default figure margins */
-  display: flex; /* Make figure a flex container */
-  flex-direction: column; /* Stack image and caption vertically */
-  align-items: center; /* Center items (image and caption) horizontally within the figure */
-  width: 80%; /* Control the width of the figure and its contents */
-  max-width: 1200px; /* Optional: set a maximum width */
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack image and caption */
+  align-items: center; /* Center items */
+  width: 80%; /* Figure width relative to section */
+  max-width: 1200px; /* Max width for figure */
 }
 
 .event-photo img {
   display: block;
-  width: 100%; /* Make image fill the width of the figure */
-  height: auto;
+  width: 100%; /* Image fills figure width */
+  height: auto; /* Maintain aspect ratio */
   max-width: 100%;
-  margin-bottom: 5px; /* Add some space between image and caption */
+  margin-bottom: 5px;
 }
 
 .event-photo figcaption {
-  font-size: 2vw; /* Adjust this value to control the scaling */
+  font-size: 2vw; /* Responsive font size */
   color: #777;
-  text-align: center; /* Keep the caption centered */
-  margin-top: 5px; /* Keep some space above the caption */
+  text-align: center;
+  margin-top: 5px;
 }
 
 /* Reduce figcaption font size for larger screens */
 @media (min-width: 768px) {
   .event-photo figcaption {
-    font-size: 1.8vw; /* Much larger fixed size for desktop (using vw for comparison) */
+    font-size: 1.8vw; /* Adjust as needed for larger screens */
   }
 }
 
+/* Side-by-Side Photos Section (Flexible Layout - Encourages 2 per row) */
 .side-by-side-photos {
   display: flex;
   flex-direction: column; /* Default to vertical on mobile */
-  margin-top: 10px;
+  margin-top: 40px; /* Consistent top margin */
+  margin-bottom: 20px; /* Adjusted bottom margin to match item bottom margin */
   width: 100%;
+  padding: 0 20px; /* Add horizontal padding consistent with description blocks */
+  box-sizing: border-box; /* Include padding in width */
 }
 
+/* Styling for EACH photo section within the side-by-side container */
 .side-by-side-photos .event-photo {
-  width: 100%; /* Default width for mobile */
-  margin-right: 0; /* No right margin on mobile */
-  margin-bottom: 20px; /* Add some vertical space between stacked images */
+  /* On mobile, they stack. Let the figure width handle inner sizing. */
+  width: 100%; /* Section takes full width in the column */
+  margin-right: 0; /* No horizontal margin on mobile */
+  margin-bottom: 30px; /* Add vertical space between stacked images on mobile */
+  /* The figure inside still has width: 80% and max-width: 1200px from the general .event-photo figure rule */
+
+   /* Flex properties for mobile */
+   flex-shrink: 0;
+   flex-grow: 0;
+   flex-basis: auto;
 }
+
+/* Ensure the last item on mobile doesn't have extra bottom margin */
+.side-by-side-photos .event-photo:last-child {
+  margin-bottom: 0;
+}
+
 
 @media (min-width: 768px) {
   .side-by-side-photos {
     flex-direction: row; /* Horizontal on desktop */
-    align-items: flex-start;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Add consistent gap between flex items */
+    margin-bottom: 20px; /* Adjusted bottom margin to match item bottom margin */
+    flex-wrap: wrap; /* Allow items to wrap to the next row if they don't fit */
+    justify-content: center; /* Center the row of items if they don't fill the space */
   }
 
+  /* Styling for EACH photo section when side-by-side - make it encourage 2 per row */
   .side-by-side-photos .event-photo {
-    width: calc(50% - 5px); /* Slightly wider, with even smaller margin */
-    margin-right: 10px; /* Even smaller right margin */
-    margin-bottom: 0; /* No bottom margin when side-by-side */
+    /* flex: flex-grow flex-shrink flex-basis */
+    /* Set flex-basis to calc(50% - half the gap) to encourage two items per row */
+    flex: 1 1 calc(50% - 10px); /* calc(50% - 20px / 2) */
+
+    /* Remove mobile-specific margins */
+    margin-right: 0;
+    /* Add margin-bottom to create space BETWEEN rows when wrapping */
+    margin-bottom: 20px; /* This adds the vertical gap below each item/row */
   }
 
-  .side-by-side-photos .event-photo:last-child {
-    margin-right: 0; /* Remove right margin from the last item */
-  }
+   /* Remove the last-child margin rule */
+  /* .side-by-side-photos .event-photo:last-child {
+    margin-right: 0;
+  } */
+
+
 }
 
 /* Reduce navigation link font size for larger screens */
 @media (min-width: 768px) {
   .navigation-bar .home-link {
-    font-size: 3vw; /* Much larger fixed size for desktop (using vw for comparison) */
+    font-size: 3vw; /* Adjust as needed for larger screens */
   }
 }
 
@@ -195,4 +234,15 @@ footer a {
   text-decoration: none;
   color: #000;
   font-size: 1.1rem;
+}
+
+.rectangle-photo img {
+  display: block;
+  width: 100%; /* Image fills figure width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 50%;
+  margin-top: 20px; /* Add 20 pixels of space above the image */
+  margin-bottom: 5px;
+  margin-left: auto; /* Keep centering */
+  margin-right: auto; /* Keep centering */
 }
