@@ -241,8 +241,15 @@ footer a {
   width: 100%; /* Image fills figure width */
   height: auto; /* Maintain aspect ratio */
   max-width: 50%;
-  margin-top: 20px; /* Add 20 pixels of space above the image */
+  margin-top: 30px; /* Add 20 pixels of space above the image */
   margin-bottom: 5px;
   margin-left: auto; /* Keep centering */
   margin-right: auto; /* Keep centering */
+}
+
+@media (max-width: 768px) {
+  .rectangle-photo img {
+    max-width: 70%;
+    margin-top: 40px; /* Apply max-width only on larger screens */
+  }
 }

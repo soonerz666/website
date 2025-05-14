@@ -343,7 +343,7 @@
 /* Adjust object-position for smaller screens (e.g., max-width: 767px for typical mobile) */
 @media (max-width: 767px) {
   .hero-image img {
-    object-position: right; /* Focus on the right side */
+    object-position: 90% center; /* Move the focus to 75% from the left */
   }
 }
 
@@ -355,7 +355,7 @@
   text-align: center; /* Center the text within the header */
   color: white; /* Ensure the default text color is white */
   width: 80%; /* Adjust width as needed */
-  max-width: 600px; /* Optional: set a maximum width */
+  max-width: 700px; /* Optional: set a maximum width */
   padding: 20px; /* Optional: add some padding around the text */
   /* Optional: Add a background color with some transparency if needed later */
   /* background-color: rgba(0, 0, 0, 0.5); */
