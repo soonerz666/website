@@ -471,8 +471,14 @@
   font-size: 1.1rem;
   
   }
-  
-  
+
+  .rectangle-photo {
+    display: flex;
+    justify-content: center; /* horizontally center content */
+    align-items: center;     /* vertically center if needed */
+    margin-top: 0px;
+    width: 100%;
+  }
   
   .rectangle-photo img {
   
